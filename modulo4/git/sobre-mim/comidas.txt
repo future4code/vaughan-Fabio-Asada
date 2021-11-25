@@ -1,0 +1,10 @@
+1 - Pão de queijo
+2 - Bacalhau
+3 - Feijoada
+4 - Sanduíche de mortadela
+5 - Açaí
+6 - Coxinha
+7 - Churros
+8 - Pastel
+9 - Barreado
+10 - Cachorro-quente
