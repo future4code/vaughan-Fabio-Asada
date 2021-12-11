@@ -12,11 +12,11 @@ const mostrarMensagem = () => {
    return [pontuacaoDoUsuario, cartaUsuario, cartaUsuario2, pontuacaoDoComputador, cartaComputador, cartaComputador2];
 };
 
-const blackJack2= () => {
+const blackJack2= (msg = `Bem vindo novamente!\nQue os jogos comecem!!!!`) => {
    const soma= [];
    const somaComputador= [];
 
-   if(confirm(`Boas vindas ao jogo de Blackjack!\nQuer iniciar uma nova rodada?`)) {
+   if(confirm(msg)) {
 
       const [
          pontuacaoDoUsuario, 
@@ -34,22 +34,19 @@ const blackJack2= () => {
       if(pontuacaoDoUsuario === 22 || pontuacaoDoComputador === 22){
          if(confirm("Suas cartas foram dois A, vamos sortear novamente?")){
             
-            const [
-               pontuacaoDoUsuario, 
-               cartaUsuario, 
-               cartaUsuario2, 
-               pontuacaoDoComputador, 
-               cartaComputador, 
-               cartaComputador2
-            ] = mostrarMensagem();
+            blackJack2();
 
          }else{
             alert("Volte sempre!");
+
+            return;
          };
       };
 
       let pontos= pontuacaoDoUsuario;
       let pontosComputador= pontuacaoDoComputador;
+      const cartaRevelada= cartaComputador.texto;
+      const cartaReveladaValor= cartaComputador.valor;
 
       while (pontos < 21) {
          
@@ -64,12 +61,13 @@ const blackJack2= () => {
          
          pontos += cartaUsuario.valor;
          
-         if(confirm(`Suas cartas são ${soma}. A carta revelada do computador é ${cartaComputador.texto}.\nDeseja comprar mais uma carta?`)){
+
+         if(confirm(`Suas cartas são ${soma}. A carta revelada do computador é ${cartaRevelada}.\nDeseja comprar mais uma carta?`)){
             soma.push(cartaUsuario.texto);
             
             if(pontos > 21){
                
-               alert(`Usuário - cartas: ${soma} - Pontuação ${pontos}\nComputador - cartas: ${cartaComputador.texto} ${cartaComputador2.texto} - Pontuação ${pontuacaoDoComputador}\nComputador Ganhou!`);
+               alert(`Usuário - cartas: ${soma} - Pontuação ${pontos}\nComputador - cartas: ${cartaRevelada} ${cartaComputador2.texto} - Pontuação ${cartaReveladaValor + cartaComputador2.valor}\nComputador Ganhou!`);
 
             }
          
@@ -84,7 +82,8 @@ const blackJack2= () => {
                   if(pontosComputador >= 21){
                      
                      alert(`Usuário - cartas: ${soma} - Pontuação ${pontos - cartaUsuario.valor}\nComputador - cartas: ${somaComputador} - Pontuação ${pontosComputador}\nUsuário Ganhou!`);
-   
+                     
+                     return;
                   }
                }else{
                   
@@ -93,16 +92,20 @@ const blackJack2= () => {
 
                      alert(`Usuário - cartas: ${soma} - Pontuação ${pontos - cartaUsuario.valor}\nComputador - cartas: ${somaComputador} - Pontuação ${pontosComputador - cartaComputador.valor}\nUsuário Ganhou!`);
 
+                     return;
+
                   }else if(pontosComputador - cartaComputador.valor> pontos - cartaUsuario.valor){
 
                      alert(`Usuário - cartas: ${soma} - Pontuação ${pontos - cartaUsuario.valor}\nComputador - cartas: ${somaComputador} - Pontuação ${pontosComputador - cartaComputador.valor}\nComputador Ganhou!`);
+
+                     return;
 
                   }else{
 
                      alert(`Usuário - cartas: ${soma} - Pontuação ${pontos - cartaUsuario.valor}\nComputador - cartas: ${somaComputador} - Pontuação ${pontosComputador - cartaComputador.valor}\nEmpate!`);
                   }
 
-                  pontosComputador= 22;
+                  return;
                }
             }
          }
@@ -112,5 +115,5 @@ const blackJack2= () => {
    }
 };
 
-blackJack2();
+blackJack2(`Boas vindas ao jogo de Blackjack!\nQuer iniciar uma nova rodada?`);
 
