@@ -10,7 +10,16 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  
+    //return array.reverse();
+
+    // Desafio
+    const invertido= array.map((_,index, arr) => {
+        let ultimoElemento= arr.length - 1;
+
+        return arr[ultimoElemento - index];
+    });
+
+    return invertido;
 }
 
 // EXERCÍCIO 03
