@@ -105,8 +105,17 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    const numeros= 50;
+    const array= [];
+
+    for(let i= 0; i < numeros; i++){
+        if(i % 2 === 0){
+            array.push(i);
+        }
+    }
+    return array.slice(0, n)
 }
+
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
