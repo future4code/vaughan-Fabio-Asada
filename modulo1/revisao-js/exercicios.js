@@ -204,19 +204,35 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+    
     consultas.sort((itemA, itemB) => {
         const elementA= [itemA.dataDaConsulta[3] ,itemA.dataDaConsulta[4]].join("");
         const elementB= [itemB.dataDaConsulta[3] , itemB.dataDaConsulta[4]].join("");
+
         
-        if (elementA > elementB) {
-            return 1;
-        };
+        if(elementA === elementB){
+            if (itemA.dataDaConsulta > itemB.dataDaConsulta) {
+                return 1;
+            };
+    
+            if (itemA.dataDaConsulta < itemB.dataDaConsulta) {
+                return -1;
+            };
+    
+            return 0;
 
-        if (elementA < elementB) {
-            return -1;
-        };
+        }else{
 
-        return 0;
+            if (elementA > elementB) {
+                return 1;
+            };
+    
+            if (elementA < elementB) {
+                return -1;
+            };
+    
+            return 0;
+        }
     });
 
 
