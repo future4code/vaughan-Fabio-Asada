@@ -170,7 +170,20 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
+    
+    contas.forEach(obj => {
+        let total= 0;
 
+        obj.compras.forEach(despesas => {
+            total += despesas;
+        });
+
+        obj.saldoTotal -= total;
+        obj.compras = [];
+        
+    });
+
+    return contas;
 }
 
 // EXERCÍCIO 15A
