@@ -73,7 +73,15 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    let maior= 0;
+
+    array.forEach(item => {
+        if(item > maior){
+            maior = item;
+        }
+    });
+
+    return maior;
 }
 
 // EXERCÍCIO 07
