@@ -46,7 +46,20 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    // const pares= array.filter(item => item % 2 === 0);
+
+    // return pares;
+
+    //Desafio
+    const pares= [];
+
+    array.forEach(element => {
+        if(element % 2 === 0){
+            pares.push(element);
+        }
+    });
+
+    return pares;
 }
 
 // EXERCÍCIO 05
