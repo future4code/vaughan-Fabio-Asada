@@ -64,7 +64,11 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    const pares= array
+        .filter(item => item % 2 === 0)
+        .map(item => item ** 2);
+
+    return pares;
 }
 
 // EXERCÍCIO 06
