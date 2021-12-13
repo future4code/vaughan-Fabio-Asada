@@ -24,8 +24,25 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+    //return array.sort((a, b) => a - b);
+
+    //Desafio
+    const novoArray=[];
+    let menorNumeroDoArray= array;
+    let numeroDeCaracteres= array.length;
+    
+    for(let i= 0; i < numeroDeCaracteres; i++){
+        let inicio= Math.min(...menorNumeroDoArray);
+
+        novoArray.push(inicio);
+        let numeroRemovido= menorNumeroDoArray.indexOf(inicio);
+
+        menorNumeroDoArray.splice(numeroRemovido, 1);
+    };
+
+    return novoArray;
 }
+
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
