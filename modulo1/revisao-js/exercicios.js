@@ -188,10 +188,37 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    consultas.sort((itemA, itemB) => {
+        if (itemA.nome > itemB.nome) {
+            return 1;
+        };
+
+        if (itemA.nome < itemB.nome) {
+            return -1;
+        };
+        
+        return 0;
+    });
+    return consultas;
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    consultas.sort((itemA, itemB) => {
+        const elementA= [itemA.dataDaConsulta[3] ,itemA.dataDaConsulta[4]].join("");
+        const elementB= [itemB.dataDaConsulta[3] , itemB.dataDaConsulta[4]].join("");
+        
+        if (elementA > elementB) {
+            return 1;
+        };
+
+        if (elementA < elementB) {
+            return -1;
+        };
+
+        return 0;
+    });
+
+
+    return consultas;
 }
