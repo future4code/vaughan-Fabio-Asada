@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*================== Cabeçalho ======================*/
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color:  #55a5eb;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, .4);
+    margin-bottom: 55px;
+}
+
+.nome_da_loja{
+    width: fit-content;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    line-height: 100px;
+    margin-left: 25px;
+}
+
+.menu{
+    width: fit-content;
+    float: right;
+    line-height: 140px;
+}
+
+.home, .caixa, .compras, .funcionario{
+    margin-right: 75px;
+}
+
+
+/*================== Rodapé ======================*/
+
+footer{
+    height: 150px;
+    background-color: #55a5eb;
+    margin-top: 50px;
+}
+
+.redes-sociais{
+    padding-top: 50px;
+    width: fit-content;
+}
+
+.sociais{
+    margin-left: 50px;
+}
+
+.criado{
+    color: #fff;
+    width: fit-content;
+    font-size: 25px;
+    float: right;
+    margin-right: 30px;
+}
+
+.footer_add_produtos{
+    margin-top: 188px;
+}
+
+.footer_funcionarios{
+    margin-top: 315px;
+}
+
+/* ================= Estilizando a Página Index ================*/
+
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #174453;
+    margin-bottom: 35px;
+}
+
+.container{
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3f3f3;
+    box-shadow: 15px 15px 20px rgba(3, 3, 3, 0.4);
+    border-radius: 6px;
+}
+
+.card{
+    width: 350px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, .4);
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.card_corpo{
+    margin-top: 20px;
+}
+
+.card_titulo{
+    margin-bottom: 15px;
+}
+
+.card_texto{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao_do_card{
+    margin-top: 30px;
+    background-color: rgb(253, 33, 81);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
