@@ -29,7 +29,7 @@ header{
     line-height: 140px;
 }
 
-.home, .caixa, .compras, .funcionario{
+.home, .caixa, .compras, .funcionario, .venda, .historico{
     margin-right: 75px;
 }
 
@@ -60,11 +60,11 @@ footer{
 }
 
 .footer_add_produtos{
-    margin-top: 188px;
+    margin-top: 198px;
 }
 
 .footer_funcionarios{
-    margin-top: 315px;
+    margin-top: 177px;
 }
 
 /* ================= Estilizando a Página Index ================*/
@@ -118,4 +118,82 @@ footer{
     font-size: 1rem;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
     cursor: pointer;
+}
+
+/* ================= Estilizando a Página Controle de Estoque ================*/
+
+.container_da_tabela{
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.tabela{
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .6);
+}
+
+table, th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #8e8e8f;
+}
+
+.cabecalho{
+    height: 90px;
+    background-color: #414144;
+    color: white;
+}
+
+
+/* ================= Estilizando a Página Adicionar Produtos ================*/
+
+.formulario{
+    width:80%;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.info_do_produto{
+    margin: 20px;
+}
+
+.container_formulario{
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #cecbcb;
+    box-shadow: 15px 15px 35px rgba(3, 3, 3, 0.4);
+    border-radius: 8px;
+    width: 700px;
+    margin: auto;
+    
+}
+
+input {
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.footer_add_produtos{
+    margin-top: 60px;
+}
+
+/* ================= Estilizando a Página Funcionários ================*/
+
+.li_funcionario{
+    margin: 5px;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #174453;
 }
