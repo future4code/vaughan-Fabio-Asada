@@ -33,7 +33,6 @@ header{
     margin-right: 75px;
 }
 
-
 /*================== Rodapé ======================*/
 
 footer{
@@ -64,7 +63,7 @@ footer{
 }
 
 .footer_funcionarios{
-    margin-top: 177px;
+    margin-top: 70px;
 }
 
 /* ================= Estilizando a Página Index ================*/
@@ -196,4 +195,35 @@ input {
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     color: #174453;
+}
+
+.cantores{
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+.axl-rose{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+
+}
+
+.steve-tyler{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.kurt-cobain{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.freddie{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
 }
