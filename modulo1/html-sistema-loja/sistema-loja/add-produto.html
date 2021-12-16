@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Adicionar Produto</title>
+</head>
+<body>
+    <header>
+
+        <div class="nome_da_loja">
+            
+            <h1><em>NerdGames</em></h1>
+            
+        </div>
+        
+        <nav class="menu">
+
+            <a href="./index.html" class="home"><img src="./img/casa.png" alt="Casa" href="./index.html"></a>
+
+            <a href="./ctrl-estoque.html" class="caixa"><img src="./img/caixas.png" alt="Caixas"></a> 
+
+            <a href="./add-produto.html" class="compras"><img src="./img/shopping-cart.png" alt="Carrinho de Compras"></a> 
+
+            <a href="./funcionarios.html" class="funcionario"><img src="./img/user2.png" alt="Funcionários"> </a>
+
+            <a href="./pagina-de-venda.html" class="venda"><img src="./img/cash.png" alt="Página de Vendas"> </a>
+
+            <a href="./historico-de-vendas.html" class="historico"><img src="./img/disco.png" alt="Histórico de Vendas"></a>
+        </nav>
+
+    </header>
+
+    <h1 class="titulo">Adicionar Produtos</h1>
+    
+    <div class="super-container">
+        <div class="container_formulario">
+
+            <form action="" class="formulario">
+    
+                <div>
+                    
+                    <div class="info_do_produto">
+                        <label for="link-foto">Link para foto</label> <br>
+                    
+                        <input type="url" id="link-foto" name="link-foto">
+                    </div>
+        
+                    
+        
+                    <div class="info_do_produto">
+                        <label for="nome_do_produto">Descrição do produto</label><br>
+                        <!-- Adicione o id apropriado para o input abaixo -->
+                        <input type="text" id="nome_do_produto" name="descrição">
+                    </div>
+                
+                    
+        
+                    <div class="info_do_produto">
+                        <label for="preco">Preço (em R$)</label><br>
+                        <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                        <input type="number" id="preco" name="preço" min="0">
+                    </div>
+                
+                    
+        
+                    <div class="info_do_produto">
+                        <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+                        <label for="estoque">Quantidade disponível</label><br>
+                        <input type="number" id="estoque" name="estoque" min="0">
+                    </div>
+        
+                    
+        
+                    <div class="form-add info_do_produto">
+                        <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                        <button type="submit" class="botao_do_card"><strong>Adicionar</strong></button>
+                    </div>
+        
+                </div>
+        
+            </form>
+    
+        </div>
+
+    </div>
+    
+    
+
+    <footer class="footer_add_produtos">
+
+        <div class="redes-sociais">
+            <a href="#" class="sociais"><img src="./img/face.png" alt="Facebook"/></a>
+
+            <a href="#" class="sociais"><img src="./img/insta.png" alt="Instagram"/></a>
+            
+            <a href="#" class="sociais"><img src="./img/twitter.png" alt="Twitter"/></a>
+
+            
+        </div>   
+        
+        <div class="criado">
+            ©Copyright by <strong>Fábio Asada</strong>
+        </div>
+
+    </footer>
+
+</body>
+</html>

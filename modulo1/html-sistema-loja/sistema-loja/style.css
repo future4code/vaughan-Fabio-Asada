@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*================== Cabeçalho ======================*/
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color:  #55a5eb;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, .4);
+    margin-bottom: 55px;
+}
+
+.nome_da_loja{
+    width: fit-content;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    line-height: 100px;
+    margin-left: 25px;
+}
+
+.menu{
+    width: fit-content;
+    float: right;
+    line-height: 140px;
+}
+
+.home, .caixa, .compras, .funcionario, .venda, .historico{
+    margin-right: 75px;
+}
+
+/*================== Rodapé ======================*/
+
+footer{
+    height: 150px;
+    background-color: #55a5eb;
+    margin-top: 50px;
+}
+
+.redes-sociais{
+    padding-top: 50px;
+    width: fit-content;
+}
+
+.sociais{
+    margin-left: 50px;
+}
+
+.criado{
+    color: #fff;
+    width: fit-content;
+    font-size: 25px;
+    float: right;
+    margin-right: 30px;
+}
+
+.footer_add_produtos{
+    margin-top: 198px;
+}
+
+.footer_funcionarios{
+    margin-top: 70px;
+}
+
+/* ================= Estilizando a Página Index ================*/
+
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #174453;
+    margin-bottom: 35px;
+}
+
+.container{
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3f3f3;
+    box-shadow: 15px 15px 20px rgba(3, 3, 3, 0.4);
+    border-radius: 6px;
+}
+
+.card{
+    width: 350px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, .4);
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.card_corpo{
+    margin-top: 20px;
+}
+
+.card_titulo{
+    margin-bottom: 15px;
+}
+
+.card_texto{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao_do_card{
+    margin-top: 30px;
+    background-color: rgb(253, 33, 81);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+/* ================= Estilizando a Página Controle de Estoque ================*/
+
+.container_da_tabela{
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.tabela{
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .6);
+}
+
+table, th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #8e8e8f;
+}
+
+.cabecalho{
+    height: 90px;
+    background-color: #414144;
+    color: white;
+}
+
+
+/* ================= Estilizando a Página Adicionar Produtos ================*/
+
+.formulario{
+    width:80%;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.info_do_produto{
+    margin: 20px;
+}
+
+.container_formulario{
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #cecbcb;
+    box-shadow: 15px 15px 35px rgba(3, 3, 3, 0.4);
+    border-radius: 8px;
+    width: 700px;
+    margin: auto;
+    
+}
+
+input {
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.footer_add_produtos{
+    margin-top: 60px;
+}
+
+/* ================= Estilizando a Página Funcionários ================*/
+
+.li_funcionario{
+    margin: 5px;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #174453;
+}
+
+.cantores{
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+.axl-rose{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+
+}
+
+.steve-tyler{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.kurt-cobain{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.freddie{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
