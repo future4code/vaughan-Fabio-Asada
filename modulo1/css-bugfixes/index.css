@@ -75,6 +75,8 @@ div>p:first-child {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    width: fit-content;
+    margin: auto;
 }
 
 #container-para-comprar {
@@ -140,6 +142,10 @@ td button:hover {
 
 .container-do-search> div> img:hover{
     opacity:.3;
+}
+
+.container-do-search> div> img:active{
+    opacity:1;
 }
 
 #back-button {
