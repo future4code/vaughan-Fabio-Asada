@@ -72,6 +72,10 @@ div img {
     padding-top: 30px;
 }
 
+#container-de-descricao>p {
+    text-align: center;
+}
+
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
