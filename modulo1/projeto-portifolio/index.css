@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    height: 70px;
+    color: rgb(84, 157, 240);
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+nav> ul> li{
+    list-style: none;
+    display: inline;
+    padding-right: 25px;
+}
+
+main{
+    width: 100%;
+
+}
+
+
+.section-projetos{
+    background-color: rgb(95, 91, 91);
+    color: white;
+}
+
+.sobre-mim{
+    background-color: #fff;
+    color: rgb(84, 157, 240);
+    width: 80%;
+    height: 50vh;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.empregadores{
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 157, 240);
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.div-projetos{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 157, 240);
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.habilidades-tecnicas{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    
+}
+
+.hard{
+    width: 45%;
+    border-left:5px solid #3ECECE;
+    padding-left: 20px;
+}
+.hard> h1{
+    color: rgb(84, 157, 240);
+    padding-bottom: 25px;
+}
+.soft{
+    width: 45%;
+    border-left:5px solid #3ECECE;
+    padding-left: 20px;
+}
+
+.soft> h1{
+    color: rgb(84, 157, 240);
+    padding-bottom: 25px;
+}
+
+.section-formulario{
+    background-color: cadetblue;
+    color: white;
+    padding: 15px;
+}
+
+.formulario{
+    width: 8%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    height: 70px;
+}
