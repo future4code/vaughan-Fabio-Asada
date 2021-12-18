@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gruppo', cursive;
+    font-weight: 500;
 }
 
 .cabecalho{
@@ -12,15 +13,44 @@
     padding: 15px;
     height: 70px;
     color: rgb(84, 157, 240);
-    background-color: #fff;
+    background-color: rgb(235, 235, 235);
     position: sticky;
     top: 0;
+    box-shadow: 5px 8px 7px rgb(0, 0, 0, .4);
+}
+
+.nick{
+    font-weight: bolder;
+    text-shadow:5px 5px 7px rgb(0, 0, 0, .4);
+}
+.nick> a{
+    text-decoration: none;
+    color: rgb(84, 157, 240);
+}
+
+.descricao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+}
+
+.link-do-menu{
+    text-decoration: none;
+    color: rgb(84, 157, 240);
+}
+
+.link-do-menu:hover{
+    color: rgb(10, 55, 107);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
+    font-weight: bolder;
 }
 
 nav> ul> li{
     list-style: none;
     display: inline;
     padding-right: 25px;
+    font-weight: 600;
 }
 
 main{
@@ -30,13 +60,11 @@ main{
 
 
 .section-projetos{
-    background-color: rgb(95, 91, 91);
     color: white;
 }
 
 .sobre-mim{
-    background-color: #fff;
-    color: rgb(84, 157, 240);
+    color: black;
     width: 80%;
     height: 50vh;
     margin: auto;
@@ -44,31 +72,101 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    
+
 }
 
 .empregadores{
-    background-color: rgb(255, 255, 255);
-    color: rgb(84, 157, 240);
     width: 80%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
+    color: black;
+    margin-bottom: 80px;
+}
+
+.card{
+    width: 450px;
+    margin: auto;
+    margin-top: 70px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .4);
+    padding: 15px;
+}
+
+.labenu{
+    width: 150px;
+}
+
+.card-titulo{
+    margin-bottom: 25px;
+}
+.card-texto{
+    text-indent: 2rem;
+    margin-bottom: 25px;
+}
+
+.linha{
+    opacity:0.4;
+    margin-bottom: 25px;
+}
+
+.botao-do-card{
+    color: #fab744;
+    background-color: white;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .div-projetos{
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
     color: rgb(84, 157, 240);
     width: 80%;
     margin: auto;
     margin-top: 30px;
     text-align: center;
+    margin-bottom: 60px;
 }
+
+.div-projetos> h1{
+    color: black;
+}
+
 .projetos{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 50px;
 }
+
+.projetos> div> h1{
+    font-weight: bolder;
+    margin-top: 30px;
+
+}
+
+.blackjack{
+    width: 350px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.ps5{
+    width: 350px;
+    height: 218px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.blackjack:hover, .ps5:hover{
+    opacity: 0.5;
+}
+/* ============================================= */
 
 .habilidades-tecnicas{
     display: flex;
@@ -83,35 +181,97 @@ main{
 
 .hard{
     width: 45%;
-    border-left:5px solid #3ECECE;
+    border-left:5px solid #BAE2F1;
     padding-left: 20px;
+    font-size: 1.1rem;
 }
 .hard> h1{
     color: rgb(84, 157, 240);
     padding-bottom: 25px;
+    font-weight: bolder;
 }
 .soft{
     width: 45%;
-    border-left:5px solid #3ECECE;
+    border-left:5px solid #BAE2F1;
     padding-left: 20px;
+    font-size: 1.1rem;
 }
 
 .soft> h1{
     color: rgb(84, 157, 240);
     padding-bottom: 25px;
+    font-weight: bolder;
 }
 
+
+/*======================== Formulário ============================*/
+
 .section-formulario{
-    background-color: cadetblue;
-    color: white;
     padding: 15px;
 }
 
-.formulario{
-    width: 8%;
+.container-formulario{
+    width: 80%;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 80px;
+    text-align: center;
+    padding: 20px;
 }
+
+.formulario{
+    margin-top: 40px;
+}
+
+fieldset{
+    border: none;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .4) ;
+}
+
+.input-nome, .input-email{
+    width: 46%;
+    margin: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 65px;
+    margin-top: 60px;
+    font-size: 1.1rem;
+}
+
+.text-area{
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 35px;
+    width: 96%;
+    font-size: 1.1rem;
+}
+
+.botao-enviar{
+    background-color: #29b8b8;
+    color: #fff;
+    padding: 7px 20px;
+    border: none;
+    margin-bottom: 35px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.botao-limpar{
+    background-color: #f8374b;
+    color: #fff;
+    padding: 7px 20px;
+    border: none;
+    margin-bottom: 35px;
+    margin-left: 15px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.botoes{
+    text-align: start;
+    padding-left: 21px;
+}
+
+/*========================== Rodapé ================================*/
 
 footer{
     display: flex;
@@ -120,4 +280,41 @@ footer{
     width: 80%;
     margin: auto;
     height: 70px;
+    margin-top: 25px;
+}
+
+.footer{
+    width: 500px;
+}
+
+.link{
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+span{
+    font-weight: bolder;
+    color: #f8374b;
+}
+
+/* ======================= Página Blackjack ==================*/
+
+.nome-dos-projetos{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.descricao-do-projeto{
+    width: 85%;
+    border-left: 10px solid rgb(241, 128, 128);
+    margin: auto;
+    margin-top:80px;
+    margin-bottom:150px;
+    text-align: center;
+}
+
+.descricao-do-projeto> p{
+    margin: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }

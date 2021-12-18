@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <title>Nome do Projeto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Portfólio</title>
 </head>
 <body>
     <header class="cabecalho">
         <div>
-            <h1>Logo</h1> 
+            <h1 class="nick"><a href="#">Fasada</a></h1> 
         </div>
 
         <nav>
             <ul>
-                <li>Sobre Mim</li>
-                <li>Serviços</li>
-                <li>Contato</li>
+                <li><a href="./blackjack.html" class="link-do-menu">Blackjack</a></li>
+                <li><a href="./nerdgames.html" class="link-do-menu">NerdGames</a></li>
             </ul>
         </nav>
     </header>
@@ -26,33 +27,59 @@
         <section class="section-projetos">
 
             <div class="sobre-mim">
-                <p>Sobre Mim</p>
+                <h1>Sobre Mim</h1>
                 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, quibusdam eligendi soluta, adipisci rerum facere at veritatis minima aliquam assumenda aliquid! Eveniet autem totam reiciendis cumque dignissimos dolorum aut velit nisi consequatur reprehenderit dicta quam quas adipisci aspernatur ratione natus asperiores tenetur, suscipit pariatur! Doloremque voluptatum assumenda alias praesentium in quo unde delectus nemo quod. Alias officiis voluptatum accusamus porro?</p>
+                <div class="descricao">
+                    
+                    <img src="./imagens/rapaz-no-computador.png" alt="Garoto no computador">
+
+                    <p>Formado em Desenho Indrustrial pela Universidade Presbiteriana Mackenzie, trabalhei alguns anos no estúdio de arte do Maurício de Sousa Produções.
+                    Atualmente desenvolvendo minhas competências na área da tecnologia. Com foco nas tecnologias, HTML5, CSS3, JavaScript e ReactJS. Com o intuito de contribuir com as demandas do mercado atual e para o meu crescimento profissional.</p>
+                </div>
+                
                 
 
             </div>
 
-            <div class="empregadores">
-                <p>Serviços</p>
-                Uma lista de empregadores prévios, ex: Labenu.
+        
+            <div class="empregadores" >
+                <h1>Serviços</h1>
+                
+                <div class="card">
+                    <img src="./imagens/labenu.jpg" alt="Labenu" class="labenu"> 
+        
+                    <div class="card-corpo">
+                        <div class="card-titulo">
+                            <h2>Labenu</h2>
+                        </div>
+                        
+                        <p class="card-texto">Nosso time diverso de talentosos instrutores que não só passam as matérias, mas também olham cada estudante com muito carinho e de forma individual, levando sempre em consideração as diferenças, as dificuldades e forças de cada um. São os responsáveis por criar uma educação diferenciada focada na prática e no trabalho em equipe.</p>
+                        
+                        <hr class="linha">
+
+                        <a href="https://www.labenu.com.br/"><button href="#" class="botao-do-card">Saiba Mais</button></a>
+                    </div>
+                </div>
+
+
             </div>
 
             <div class="div-projetos">
-                <p>Projetos</p>
+                <h1>Projetos</h1>
 
                 <div class="projetos">
 
                     <div>
-                        Projeto 1
+                        
+                        <a href="./blackjack.html"><img src="./imagens/pexels-raka-miftah-4253888.jpg" alt="Jogo Blackjack" class="blackjack"></a>
+                        <h1>Blackjack</h1>
                     </div>
         
                     <div>
-                        Projeto 2
-                    </div>
-        
-                    <div>
-                        Projeto 3
+
+                        <a href="./nerdgames.html"><img src="./imagens/pexels-meryl-katys-10481040.jpg" alt="Ps5" class="ps5"></a>
+
+                        <h1>NerdGames</h1>
                     </div>
 
                 </div>
@@ -65,38 +92,78 @@
 
                 <div class="hard">
                     
-                    <h1>Hard</h1>
+                    <h1>Habilidades Técnicas</h1>
                     
-                    <p>habilidades técnicas e comportamentais. Texto descrevendo cada uma delas. habilidades técnicas e comportamentais. Texto descrevendo cada uma delas.</p>
+                    <p>HTML5</p><br>
+                    <p>Acredito que essa é minha melhor habilidade. Tento sempre deixar o código organizado.</p>
                 </div>
 
                 <div class="soft">
                     
-                    <h1>Soft</h1>
+                    <h1>Habilidades Comportamentais</h1>
 
-                    <p>habilidades técnicas e comportamentais. Texto descrevendo cada uma delas. habilidades técnicas e comportamentais. Texto descrevendo cada uma delas.</p>
+                    <p>Perseverança</p><br>
+                    <p>Sempre perseverar, por mais difícil que possa ser. Pois uma hora, tudo vai dar certo.</p>
                     
                 </div>
                 
             </div>
 
-            <div class="formulario">
+            <div class="container-formulario">
                 <div>
                     <h1>Contato</h1>
                 </div>
 
-                Formulário
+                <div class="formulario">
+                    <form action="" method="post">
+
+                        <fieldset>
+
+                            <legend>
+                                <h1>Preencha os Campos</h1>
+                            </legend>
+
+                            
+
+                                <div>
+                                    <div>
+                                        <input type="text" name="nome" id="nome" placeholder="Digite seu Nome" class="input-nome">
+    
+                                        <input type="email" name="email" id="email" placeholder="Digite seu Email" class="input-email">
+                                    </div>
+    
+                                    <div>
+                                        <textarea name="mensagem" id="mensagem" cols="120" rows="1" placeholder="Envie sua Mensagem" class="text-area"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="botoes">
+                                    <button type="submit" class="botao-enviar"> Enviar</button>
+
+                                    <button type="reset" class="botao-limpar">Limpar</button>
+                                </div>
+
+                            
+                        </fieldset>
+                    </form>
+                </div>
             </div>
+
         </section>
     </main>
 
     <footer>
-        <div>
-            redes sociais
+        <div class="footer">
+            <a href="https://www.facebook.com/fabio.asada.3/"><img src="./imagens/face.png" alt="Facebook"  class="link"></a>
+
+            <a href="https://github.com/FabioAsada"><img src="./imagens/github-brands.svg" alt="Github" width="50px" class="link"></a>
+            
+            <a href="https://www.linkedin.com/in/fabio-asada-71191b41/"><img src="./imagens/linkedin-brands.svg" alt="Linkedin" width="50px" class="link"></a>
         </div>
 
         <div>
-            Texto
+            <h3>Criado por <span>Fábio Asada</span> 2021</h3> 
         </div>
     </footer>
 </body>
