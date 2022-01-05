@@ -20,6 +20,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
 }
 
 .cabecalho> span{
@@ -29,7 +31,7 @@
 }
 
 .cabecalho> input{
-    margin-right: 15px;
+    margin-right: 40px;
     border: none;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, .6);
     border-radius: 4px;
@@ -43,6 +45,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    padding-top: 120px;
 }
 
 .grupoA{
@@ -106,10 +109,11 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: #464848;
     color: #FFF;
     font-size: 1.4rem;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer> div> span{
@@ -137,4 +141,114 @@ img{
 
 .video-de-exibicao> video{
     width: 80vw;
+}
+
+/*=============== Criando Responsividade ============*/
+
+
+
+@media (max-width: 800px){
+    
+    .cabecalho> span{
+        font-size: 2rem;
+    }
+
+    .grupoA{
+        flex-direction: column;
+        height: fit-content;
+        margin-top: -20px;
+    }
+
+    .grupoA> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    img{
+        width: 69.5vw;
+        height: 30vh;
+        border-radius: 7px;
+    }
+
+    .card> div{
+        font-size: 1.4rem;
+        font-weight: bolder;
+        padding:0 15px;
+        margin-top: 20px;
+        
+    }
+
+    .grupoB{
+        flex-direction: column;
+        height: fit-content;
+        padding-bottom: 120px;
+    }
+
+    .grupoB> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-device-width: 400px){
+
+    .cabecalho> span{
+        font-size: 4rem;
+        
+    }
+
+    .cabecalho> input{
+        width: 30vw;
+        height: 2vh;
+    }
+
+    .grupoA{
+        flex-direction: column;
+        height: fit-content;
+        padding-top: 60px;
+    }
+
+    .grupoA> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    img{
+        width: 69.5vw;
+        height: 30vh;
+        border-radius: 7px;
+    }
+
+    .card> div{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        padding:0 15px;
+        margin-top: 20px;
+        color: rgb(218, 90, 31);
+    }
+
+    .grupoB{
+        flex-direction: column;
+        height: fit-content;
+        padding-bottom: 200px;
+    }
+
+    .grupoB> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    .footer{
+        font-size: 2.2rem;
+    }
+
+    .footer> div> span{
+        font-size: 3rem;
+    }
+
 }
