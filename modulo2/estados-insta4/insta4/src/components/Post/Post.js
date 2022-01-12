@@ -81,7 +81,7 @@ class Post extends React.Component {
 
   aoEnviarComentario = () => {
     this.setState({
-      comentando: true,
+      comentando: !this.state.comentando,
       numeroComentarios: this.state.numeroComentarios + 1
     })
   }
@@ -123,18 +123,22 @@ class Post extends React.Component {
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
         />
+
+        
       </PostFooter>
       {componenteComentario}
 
-    </PostContainer>
+      </PostContainer>
       
-      <Post1 img={homem} paisagem='https://picsum.photos/150/150'/>
+      <Post1 img={homem} paisagem='https://picsum.photos/150/150'>
+
+      </Post1>
 
       <Post2 img={mulher} paisagem='https://picsum.photos/180/180'/>
-
+      
     </>
     )
   }
 }
 
-export default Post
+export default Post;

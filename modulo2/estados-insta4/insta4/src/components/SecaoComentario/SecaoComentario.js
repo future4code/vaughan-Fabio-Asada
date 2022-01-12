@@ -25,7 +25,7 @@ export class SecaoComentario extends Component {
 		this.setState({
 			value:event.target.value
 		});
-		console.log(event.target.value);
+		console.log(this.state);
 		
 	}
 
