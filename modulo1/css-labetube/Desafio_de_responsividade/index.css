@@ -1,0 +1,149 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#first-block {
+    background-color: red;
+    width: 100vw;
+    height: 10vh;
+}
+
+.div123456{
+    width: 97vw;
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+.blue-block {
+    background-color: blue;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yellow-block {
+    background-color: yellow;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-block {
+    background-color: green;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div78{
+    width: 97vw;
+    height: 45vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+
+.black-block {
+    background-color: black;
+    color: white;
+    width: 45vw;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div91011{
+    width: 97vw;
+    height: 20vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+.white-block {
+    background-color: white;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =================================== */
+
+
+@media (max-width: 900px){
+    
+    #first-block {
+        margin-bottom: -50px;
+    }
+    
+    .div123456{
+        display: grid;
+        height: 30vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin: 45px 0px;
+    }
+
+    .blue-block {
+        background-color: blue;
+        width: 45vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .yellow-block {
+        background-color: yellow;
+        width: 45vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    
+    }
+    
+    .green-block {
+        background-color: green;
+        width: 70vw;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:15px 0px;
+
+    }
+
+    .div78{
+        margin-top: 50px;
+    }
+    
+}

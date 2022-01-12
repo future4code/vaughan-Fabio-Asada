@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================ Cabeçalho ===================================== */
+
+.cabecalho{
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(233, 132, 38);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.cabecalho> span{
+    padding-left: 15px;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.cabecalho> input{
+    margin-right: 40px;
+    border: none;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .6);
+    border-radius: 4px;
+}
+
+/* =================== Vídeos =================================== */
+
+.videos{
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+}
+
+.grupoA{
+    display: flex;
+    width: 90vw;
+    height: 30vh;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.grupoA> .card{
+    width: 20vw;
+    height: 30vh;
+    border-radius: 7px;
+    border: 2px solid rgb(111, 182, 5);
+    box-shadow: 5px 5px 20px rgba(45, 144, 6, 0.6);
+}
+
+.grupoB{
+    display: flex;
+    width: 90vw;
+    height: 30vh;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+
+}
+
+.grupoB> .card{
+    width: 20vw;
+    height: 30vh;
+    border-radius: 7px;
+    border: 2px solid rgb(111, 182, 5);
+    box-shadow: 5px 5px 20px rgba(45, 144, 6, 0.6);
+}
+
+.card> div{
+    font-size: 1.2rem;
+    padding:0 15px;
+    margin-top: 20px;
+    
+}
+
+img{
+    width: 19.8vw;
+    height: 20vh;
+    border-radius: 7px;
+}
+
+
+
+
+/* =================== Rodapé ================= */
+
+.footer{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #464848;
+    color: #FFF;
+    font-size: 1.4rem;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer> div> span{
+    color: rgb(226, 178, 116);
+    font-weight: bolder;
+    font-size: 1.7rem;
+}
+
+/*=============== Outras páginas =============*/
+
+.video-de-exibicao{
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.video-de-exibicao> div{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 20px;
+    color: rgb(163, 80, 7);
+}
+
+.video-de-exibicao> video{
+    width: 80vw;
+}
+
+/*=============== Criando Responsividade ============*/
+
+
+
+@media (max-width: 800px){
+    
+    .cabecalho> span{
+        font-size: 2rem;
+    }
+
+    .grupoA{
+        flex-direction: column;
+        height: fit-content;
+        margin-top: -20px;
+    }
+
+    .grupoA> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    img{
+        width: 69.5vw;
+        height: 30vh;
+        border-radius: 7px;
+    }
+
+    .card> div{
+        font-size: 1.4rem;
+        font-weight: bolder;
+        padding:0 15px;
+        margin-top: 20px;
+        
+    }
+
+    .grupoB{
+        flex-direction: column;
+        height: fit-content;
+        padding-bottom: 120px;
+    }
+
+    .grupoB> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+}
+
+@media (max-device-width: 400px){
+
+    .cabecalho> span{
+        font-size: 4rem;
+        
+    }
+
+    .cabecalho> input{
+        width: 30vw;
+        height: 2vh;
+    }
+
+    .grupoA{
+        flex-direction: column;
+        height: fit-content;
+        padding-top: 60px;
+    }
+
+    .grupoA> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    img{
+        width: 69.5vw;
+        height: 30vh;
+        border-radius: 7px;
+    }
+
+    .card> div{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        padding:0 15px;
+        margin-top: 20px;
+        color: rgb(218, 90, 31);
+    }
+
+    .grupoB{
+        flex-direction: column;
+        height: fit-content;
+        padding-bottom: 200px;
+    }
+
+    .grupoB> .card{
+        width: 70vw;
+        height: 40vh;
+        margin-bottom: 25px;
+    }
+
+    .footer{
+        font-size: 2.2rem;
+    }
+
+    .footer> div> span{
+        font-size: 3rem;
+    }
+
+}
