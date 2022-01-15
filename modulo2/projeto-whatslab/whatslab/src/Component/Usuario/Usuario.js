@@ -1,5 +1,7 @@
 import React from "react";
 import * as Layout from "./UsuarioEstilos";
+import check from "../../Imagem/doublecheck.svg";
+import checkEsquerda from "../../Imagem/doublecheckEsquerda.png";
 
 const {
     Template, 
@@ -8,7 +10,10 @@ const {
     InputNome, 
     InputMensagem,
     Button,
-    CardNomeMensagem
+    CardNomeMensagem,
+    CardNomeMensagemEu,
+    DoisCheck,
+    DoisCheckEsquerda
 } = Layout;
 
 class Usuario extends React.Component{
@@ -39,19 +44,40 @@ class Usuario extends React.Component{
         event.preventDefault();
     }
 
-    sumirPost= indexCapturado => {
-        const novaRenderizacao= this.state.juntarInformacoes.filter((_, index) => index !== indexCapturado);
+    sumirPost= (novoNome, indexCapturado) => {
+        const novaRenderizacao= this.state.juntarInformacoes.map((item, index) => {
+            if(index === indexCapturado) {
+                return {nome:novoNome,  mensagem:`Mensagem Apagada`}
+            }
 
-        this.setState({juntarInformacoes:novaRenderizacao});
+            return item;
+        });
+
+
+        if(window.confirm("Tem certeza que deseja deletar essa mensagem?")){
+
+            this.setState({juntarInformacoes:novaRenderizacao});
+        }
     }
 
     render(){
         const mostrarNatela= this.state.juntarInformacoes.map((item, index) => {
             
-            return <CardNomeMensagem key={index} onDoubleClick ={() => this.sumirPost(index)}>
+            if(item.nome === 'eu'){
                 
-                <p><NomeDoUsuario>{item.nome}</NomeDoUsuario>: {item.mensagem}</p>
-            
+                return <CardNomeMensagemEu key={index} onDoubleClick ={() => this.sumirPost(item.nome,index)}>
+
+                        <p>{item.mensagem}</p>
+                        <DoisCheck src={check}/>
+
+                </CardNomeMensagemEu>
+            }
+
+            return <CardNomeMensagem key={index} onDoubleClick ={() => this.sumirPost(item.nome,index)}>
+                
+                <p><NomeDoUsuario>{item.nome}</NomeDoUsuario> <br/>{item.mensagem} </p>
+                <DoisCheckEsquerda src={checkEsquerda}/>
+                
             </CardNomeMensagem>
         })
         
@@ -59,12 +85,12 @@ class Usuario extends React.Component{
             <React.Fragment>
                 <Template>
                         {mostrarNatela}
-                    
+                        
                     <DivForm onSubmit={this.formulario}>
 
-                        <InputNome value={this.state.nome} placeholder="Usuário" onChange={this.onChangeUsuario}/>
+                        <InputNome value={this.state.nome} placeholder=" Usuário" onChange={this.onChangeUsuario}/>
 
-                        <InputMensagem value={this.state.mensagem} placeholder="Mensagem" onChange={this.onChangeMensagem}/>
+                        <InputMensagem value={this.state.mensagem} placeholder=" Mensagem" onChange={this.onChangeMensagem}/>
 
                         <Button onClick={this.onClickButton}>Enviar</Button>
 
