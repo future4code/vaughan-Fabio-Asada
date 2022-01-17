@@ -2,9 +2,7 @@ import React from "react";
 
 class PerguntaOpcoes extends React.Component{   
     valorSelect= event => {
-
-        this.setState({escolaridade:event.target.value});
-
+        this.props.escolaridade(event.target.value);
     }
 
     render(){
@@ -13,8 +11,7 @@ class PerguntaOpcoes extends React.Component{
 
             <p>{this.props.pergunta}</p>
 
-            <select name="select" value={this.props.escolaridade} onChange={e => this.valorSelect(e)}>
-                <option value="">Selecione</option>
+            <select name="select" onChange={e => this.valorSelect(e)}>
 
                 <option value="Ensino médio incompleto">{this.props.opcoes[0]}</option>
 

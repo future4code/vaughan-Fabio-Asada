@@ -10,7 +10,7 @@ class App extends React.Component{
     promixaEtapa:false,
     promixaEtapa2:false,
     promixaEtapa3:false,
-    escolaridade:null
+    escolaridade:"Ensino médio incompleto"
   }
 
   proximaEtapa= () => {
@@ -23,17 +23,31 @@ class App extends React.Component{
     this.setState({promixaEtapa3:true})
   }
 
+  grauDeEscolaridade= valor => {
+    this.setState({escolaridade:valor})
+  };
+
   render(){
         let componenteRenderizado;
         
+
         if(this.state.promixaEtapa){
-          componenteRenderizado= <EnsinoSuperior proximaEtapa={this.proximaEtapa2}/>;
+
+          if(this.state.escolaridade === "Ensino médio incompleto" || this.state.escolaridade === "Ensino médio completo" ){
+
+            componenteRenderizado= <SemFaculdade finalizando={this.proximaEtapa3}/>;
+
+          }else{
+
+            componenteRenderizado= <EnsinoSuperior proximaEtapa={this.proximaEtapa3}/>;
+          }
 
         }else{
-          componenteRenderizado= <DadosGerais proximaEtapa={this.proximaEtapa} escolaridade={this.state.escolaridade}/>
+          componenteRenderizado= <DadosGerais proximaEtapa={this.proximaEtapa} escolaridade={this.grauDeEscolaridade}/>
         }
 
         if(this.state.promixaEtapa2){
+        
           componenteRenderizado= <SemFaculdade finalizando={this.proximaEtapa3}/>;
         }
 

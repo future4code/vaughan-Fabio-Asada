@@ -15,23 +15,64 @@ const Button= styled.button`
     text-align:center;
 `;
 
+const FrasesVermelhas= styled.p`
+    color:red;
+`;
+
 class EnsinoSuperior extends React.Component{
+    state={
+        nomeDoCurso:'',
+        unidade:"",
+        mostrar:false,
+    }
+
     evitarDefault= event => {
         event.preventDefault();
     }
 
+    curso= event => {
+        this.setState({nomeDoCurso:event.target.value});
+    }
+
+    unidade= event => {
+        this.setState({unidade:event.target.value});
+    }
+
+    alert= () => {
+        if(!this.state.nomeDoCurso || !this.state.unidade){
+            this.setState({mostrar:true});
+
+            alert("Preencha todas as perguntas da ETAPA 2 antes de prosseguir!");
+
+            return;
+        }
+        this.props.proximaEtapa();
+    }
+
     render(){
+
+        let area;
+        let local;
+
+        if(this.state.mostrar){
+            area="Preencha seu curso";
+            local="Preencha sua unidade de ensino";
+        }
+
         return(
             <FormEnsinoSuperior onSubmit={this.evitarDefault}>
 
                 <h2>ETAPA 2 - INFORMAÇÕES DO ENSINO SUPERIOR</h2>
                 <p>1 - Qual curso?</p>
-                <input/>
+                <input value={this.state.nomeDoCurso} onChange={this.curso}/>
+                <FrasesVermelhas>{area}</FrasesVermelhas>
 
                 <p>2 - Qual a unidade de ensino?</p>
-                <input/>
+                <input value={this.state.unidade} onChange={this.unidade}/>
+                <FrasesVermelhas>{local}</FrasesVermelhas>
+
                 <br/>
-                <Button onClick={this.props.proximaEtapa}>Próxima etapa</Button>
+                <Button onClick={this.alert}>Finalizar</Button>
                 
             </FormEnsinoSuperior>
         )
