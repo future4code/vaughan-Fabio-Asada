@@ -22,7 +22,7 @@ const ContainerDoX= styled.div`
   display:flex;
   justify-content:space-between;
   aligin-itens:center;
-  
+  width:600px;
 `;
 
 const Pararafoh5= styled.h1`
@@ -31,11 +31,18 @@ const Pararafoh5= styled.h1`
   cursor:pointer;
 `;
 
+const Button= styled.button`
+  color:white;
+  background-color:green;
+  width:fit-content;
+  height:30px;
+`;
+
 class App extends React.Component {
     state = {
       tarefas: [],
       inputValue: '',
-      filtro: ""
+      filtro: "",
     }
 
   componentDidUpdate() {
@@ -50,6 +57,10 @@ class App extends React.Component {
 
   onChangeInput = (event) => {
     this.setState({inputValue: event.target.value});
+  }
+
+  onChangeInput2 = (event) => {
+    this.setState({inputValue2: event.target.value});
   }
 
   criaTarefa = () => {
@@ -92,6 +103,24 @@ class App extends React.Component {
     this.setState({tarefas:listaFiltrada});
   }
 
+  editarTexto = (id, index) => {
+    
+    const mensagemParaEditar=this.state.tarefas[index].texto;
+    console.log(mensagemParaEditar)
+    const mensagemEditada= prompt("Edite sua mensagem.", `${mensagemParaEditar}`);
+
+    const textoEditado= this.state.tarefas.map(item => {
+      if(item.id === id){
+        return {...item, texto:mensagemEditada};
+      }
+    
+      return item;
+    });
+
+    this.setState({tarefas:textoEditado});
+
+  }
+
   render() {
     
 
@@ -126,16 +155,20 @@ class App extends React.Component {
 
         <TarefaList>
           {listaFiltrada.map((tarefa, index) => {
-            return (<ContainerDoX>
-              <Tarefa
-                completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
-              >
-              {tarefa.texto} 
-            
-              </Tarefa>
+            return (
+            <ContainerDoX>
+                    
+                    <Tarefa
+                      completa={tarefa.completa}
+                      onClick={() => this.selectTarefa(tarefa.id)}
+                    >
+                    {tarefa.texto} 
+                  
+                    </Tarefa>
 
-              <Pararafoh5 onClick={() => this.sumir(tarefa.id)}>X</Pararafoh5>
+                    <Button onClick={() => this.editarTexto(tarefa.id, index)}>Editar Texto</Button>
+                    <Pararafoh5 onClick={() => this.sumir(tarefa.id)}>X</Pararafoh5>
+
               </ContainerDoX>
             )
           })}
