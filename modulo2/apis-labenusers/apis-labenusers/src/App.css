@@ -1,0 +1,9 @@
+.nomesNaTela{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botaoExcluir{
+  margin-left: 15px;
+}
