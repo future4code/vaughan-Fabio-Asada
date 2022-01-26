@@ -221,11 +221,11 @@ class App extends React.Component{
 
         nome= (<div className="App">
 
-        <input onChange={this.onChangeNome} value={this.state.inputValueNome} placeholder='Nome'/>
+        <input className='inputNome' onChange={this.onChangeNome} value={this.state.inputValueNome} placeholder='Nome'/>
 
         <input onChange={this.onChangeEmail} value={this.state.inputValueEmail} placeholder='E-mail'/>
 
-        <button onClick={this.criarUsuario}>Criar Usuário</button>
+        <button onClick={this.criarUsuario} className="btnCriarUsuario">Criar Usuário</button>
 
       </div>)
         
@@ -235,7 +235,7 @@ class App extends React.Component{
           return(
             <div className='nomesNaTela'>
               <p onClick={() => this.infoDoUsuario(obj.id)}>{obj.name}</p>
-              <button className='botaoExcluir'
+              <button className='btnExcluir'
               onClick={() => this.excluir(obj.id)}>excluir</button>
             </div>
           )
@@ -248,7 +248,7 @@ class App extends React.Component{
               return(
                   <div className='nomesNaTela'>
                     <p onClick={() => this. infoDoUsuario(obj.id)}>{obj.name}</p>
-                    <button   className='botaoExcluir'
+                    <button className='btnExcluir'
                     onClick={() => this.excluir (obj.id)}>excluir</button>
                   </div>
                     )
@@ -264,7 +264,7 @@ class App extends React.Component{
             <h3>Procurar Usuário</h3>
             <input value={this.state.procurarUsuario} placeholder='Nome exato para busca' onChange={this.onChangeProcurarUsuario}/>
 
-            <button onClick={this.varrerLista}>Salvar edição</button>
+            <button onClick={this.varrerLista} className="btnCriarUsuario">Salvar edição</button>
           </div>
 
         </div>)
@@ -279,16 +279,16 @@ class App extends React.Component{
             <p>{obj.email}</p>
 
             {this.state.edicao? <div>
-              <input value={this.state.inputNomeEditar} placeholder='Nome' onChange={this.editarNome}/>
+              <input className='inputNome' value={this.state.inputNomeEditar} placeholder='Nome' onChange={this.editarNome}/>
 
               <input value={this.state.inputEmailEditar}  placeholder='Email' onChange={this.editarEmail}/>
 
-              <button onClick={() => this.editarUsuario(obj.id)}>Salvar Edição</button>
+              <button className="btnCriarUsuario" onClick={() => this.editarUsuario(obj.id)}>Salvar Edição</button>
 
-              </div>: <button onClick={this.onClickEdicao}>Edição</button>}
+              </div>: <button onClick={this.onClickEdicao} className="btnCriarUsuario">Edição</button>}
 
-            <button onClick={() => this.excluir(obj.id)}>Excluir</button>
-            <button onClick={() => this.setState({telaUsuario:!this.state.telaUsuario})}>Voltar</button>
+            <button onClick={() => this.excluir(obj.id)} className="btnExcluir">Excluir</button>
+            <button onClick={() => this.setState({telaUsuario:!this.state.telaUsuario})} className="btnVoltar">Voltar</button>
           </div>)
         })}
         </div> 
@@ -297,13 +297,14 @@ class App extends React.Component{
 
     return (
       <>
-      {/* Mudar de tela */}
+
        <div>
-        <button onClick={this.mudarATela}>Mudar de Tela</button>
+        <h1 className='titulo'>Labenusers</h1>
+        <button onClick={this.mudarATela} className="btnMudarDeTela">Mudar de Tela</button>
       </div>
       
 
-      {/* Tela Usuários */}
+  
           
           {nome}
       </>
