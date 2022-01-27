@@ -1,0 +1,79 @@
+body{
+  padding: 30px;
+  background-color: rgb(246, 246, 246);
+  text-align: center;
+  padding-top: 100px;
+}
+
+.nomesNaTela{
+  width: 500px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.btnMudarDeTela{
+  margin-bottom: 30px;
+  color: rgb(19, 18, 18);
+  font-size: 1rem;
+  background-color: rgb(241, 195, 107);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.btnMudarDeTela:hover{
+  color: white;
+  background-color: rgb(156, 106, 11);
+  
+}
+
+.titulo{
+  color: rgb(255, 60, 0);
+}
+
+.btnCriarUsuario{
+  margin-left: 15px;
+  color: white;
+  font-size: 1rem;
+  background-color: rgb(16, 219, 43);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.btnExcluir{
+  margin-left: 15px;
+  margin-right: 15px;
+  color: white;
+  font-size: 1rem;
+  background-color: rgb(219, 46, 16);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.btnVoltar{
+  color: white;
+  font-size: 1rem;
+  background-color: rgb(141, 139, 138);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.inputNome{
+  margin-right: 15px;
+  margin-bottom: 25px;
+}
