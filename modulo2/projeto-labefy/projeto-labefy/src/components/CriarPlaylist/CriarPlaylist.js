@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
+import {Body, Imagem, Input, Container, Button} from "./CriarPlaylistEstilos";
+import Pessoas from "../../assets/ouvindo_musica.png";
 
-class BuscarPlaylist extends React.Component{
+class CriarPlaylist extends React.Component{
     state={
         inputValue:""
     }
@@ -19,7 +21,11 @@ class BuscarPlaylist extends React.Component{
 
         axios
             .post(url, body, header)
-            .then(() => alert("Playlist criada com sucesso."))
+            .then(() => {
+                alert("Playlist criada com sucesso.")
+            
+                this.setState({inputValue:""})
+            })
             .catch(error => {
                 const playlistJáExiste='There already is a playlist with a similiar name.';
                 
@@ -32,13 +38,21 @@ class BuscarPlaylist extends React.Component{
 
         
         return(
-            <div>
-                <input value={this.state.inputValue} onChange={this.onChangeInputValue} placeholder="Nome da Playlist..."/>
-                <button onClick={this.createPlaylist}>Criar Playlist</button>
-            </div>
+
+            <Body>
+
+                <Container>
+
+                    <Input value={this.state.inputValue} onChange={this.onChangeInputValue} placeholder="Nome da Playlist..."/>
+                    <Button onClick={this.createPlaylist}>Criar Playlist</Button>
+
+                </Container>
+
+                <Imagem src={Pessoas}/>
+            </Body>
         )
     }
 };
 
 
-export default BuscarPlaylist;
+export default CriarPlaylist;
