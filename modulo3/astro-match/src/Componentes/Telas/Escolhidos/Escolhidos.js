@@ -64,6 +64,7 @@ const Escolhidos= props => {
                 <h3>AstroMatch</h3>
                 <ButtomExcluir onClick={limparLista}>Limpar</ButtomExcluir>
             </Container>
+            <hr/>
             {renderizarLista()}
         </>
     )

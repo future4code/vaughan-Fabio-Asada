@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
-import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom} from "./CandidatosEstilos";
+import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom, Loading} from "./CandidatosEstilos";
 
 import axios from "axios";
 
 import Heart from "../../../Assets/heart.png";
 import Botas from "../../../Assets/botas.png";
+import Carregando from "../../../Assets/loading.gif";
 
 const Candidatos= props => {
-    const [candidato, setCandidato] = useState([{}]);
+    const [candidato, setCandidato] = useState([]);
 
     useEffect(() => buscarCandidatos(), [])
 
@@ -75,9 +76,9 @@ const Candidatos= props => {
                 <h3>AstroMatch</h3>
                 <Buttom onClick={props.trocarTela}>Adicionados</Buttom>
             </Header>
-
+            <hr/>
             <div>
-                {dadosDoCandidato()}
+                {candidato.length === 0? <Loading src={Carregando}/> : dadosDoCandidato()}
             </div>
 
             <DivButtom>

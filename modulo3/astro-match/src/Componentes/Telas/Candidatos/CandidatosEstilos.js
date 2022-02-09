@@ -71,3 +71,7 @@ export const Buttom=styled.button`
         color:black;
     }
 `;
+
+export const Loading= styled.img`
+    margin-left:120px;
+`;
