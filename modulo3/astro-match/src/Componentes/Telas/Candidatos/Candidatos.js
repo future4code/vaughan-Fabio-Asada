@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom, Loading} from "./CandidatosEstilos";
+import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom, Loading, ContainerInfoRotacionar} from "./CandidatosEstilos";
 
 import axios from "axios";
 
@@ -9,9 +9,10 @@ import Carregando from "../../../Assets/loading.gif";
 
 const Candidatos= props => {
     const [candidato, setCandidato] = useState([]);
+    const [animacao, setAnimacao] = useState('');
 
-    useEffect(() => buscarCandidatos(), [])
-
+    useEffect(() => buscarCandidatos(), []);
+   
     const buscarCandidatos= () => {
         const url= `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/fabio/person`;
 
@@ -25,25 +26,79 @@ const Candidatos= props => {
     }
     
     const dadosDoCandidato= () => {
-        return(
-            <ContainerInfo>
-                <Image src={candidato[0].photo}/>
 
-                <DivContainer>
-
-                    <DivInfo>
-                        <NomeIdade>
-                            <h3>{candidato[0].name}</h3>
-                            <p>{candidato[0].age? `${candidato[0].age} anos`: ""}</p>
-                        </NomeIdade>
-
-                        <p>{candidato[0].bio}</p>
-
-                    </DivInfo>
-
-                </DivContainer>
-            </ContainerInfo>
-        )
+            switch(animacao){
+                case '':
+                    return(
+                        <ContainerInfo className="">
+                            <Image src={candidato[0].photo}/>
+            
+                            <DivContainer>
+            
+                                <DivInfo>
+                                    <NomeIdade>
+                                        <h3>{candidato[0].name}</h3>
+                                        <p>{candidato[0].age? `${candidato[0].age} anos`: ""}</p>
+                                    </NomeIdade>
+            
+                                    <p>{candidato[0].bio}</p>
+            
+                                </DivInfo>
+            
+                            </DivContainer>
+                        </ContainerInfo>
+                    )
+                case "naoGostei":
+                    setTimeout(() => window.location.reload(), 1000);
+                    
+                    return(
+                        <>
+                        <ContainerInfo className="animate__animated animate__bounceOutLeft">
+                            <Image src={candidato[0].photo}/>
+            
+                            <DivContainer>
+            
+                                <DivInfo>
+                                    <NomeIdade>
+                                        <h3>{candidato[0].name}</h3>
+                                        <p>{candidato[0].age? `${candidato[0].age} anos`: ""}</p>
+                                    </NomeIdade>
+            
+                                    <p>{candidato[0].bio}</p>
+                                    
+                                </DivInfo>
+                            </DivContainer>
+                        </ContainerInfo>
+                        
+                        </>
+                    )
+                case "gostei":
+                    setTimeout(() => window.location.reload(), 1000)
+                    
+                    return(
+                        <>
+                        <ContainerInfo className="animate__animated animate__bounceOutRight">
+                            <Image src={candidato[0].photo}/>
+            
+                            <DivContainer>
+            
+                                <DivInfo>
+                                    <NomeIdade>
+                                        <h3>{candidato[0].name}</h3>
+                                        <p>{candidato[0].age? `${candidato[0].age} anos`: ""}</p>
+                                    </NomeIdade>
+            
+                                    <p>{candidato[0].bio}</p>
+                                    
+                                </DivInfo>
+                            </DivContainer>
+                        </ContainerInfo>
+        
+                        </>
+                    )
+                default:
+                    return <h1>Ocoreu Um Erro!</h1>
+            }
     };
 
     const gostei= () => {
@@ -60,15 +115,18 @@ const Candidatos= props => {
         axios   
             .post(url, body, header)
             .then(response => {
-                console.log(response.data)
-                buscarCandidatos();
+                console.log(response.data);
+                setAnimacao("gostei");
+                buscarCandidatos()
             })
             .catch(error => console.log(error.response.data))
     };
 
     const naoGostei= () => {
+        setAnimacao("naoGostei");
         buscarCandidatos()
     }
+    
     
     return(
         <>
