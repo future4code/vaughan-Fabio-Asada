@@ -75,3 +75,8 @@ export const Buttom=styled.button`
 export const Loading= styled.img`
     margin-left:120px;
 `;
+
+export const H3=styled.h3`
+    color:#FD8F8F;
+`;
+

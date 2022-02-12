@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Container, ContainerLista ,Imagem, Buttom, ButtomExcluir} from "./EscolhidosEstilos";
+import {Container, ContainerLista ,Imagem, Buttom, ButtomExcluir, H3, MostrarLista} from "./EscolhidosEstilos";
 import axios from "axios";
 
 const Escolhidos= props => {
@@ -26,13 +26,15 @@ const Escolhidos= props => {
             return listaDeMatches.map((obj, index) => {
                 return(
                     <ContainerLista key={index}>
-                        <p>
-                            <Imagem src={obj.photo}/> 
-                        </p>
+                        
+                            <p>
+                                <Imagem src={obj.photo}/> 
+                            </p>
 
-                        <h4>
-                            {obj.name} 
-                        </h4>
+                            <h4>
+                                {obj.name} 
+                            </h4>
+
                     </ContainerLista>
                     
                 )
@@ -61,11 +63,13 @@ const Escolhidos= props => {
         <>
             <Container>
                 <Buttom onClick={props.trocarTela}>Voltar</Buttom>
-                <h3>AstroMatch</h3>
+                <H3>AstroMatch</H3>
                 <ButtomExcluir onClick={limparLista}>Limpar</ButtomExcluir>
             </Container>
             <hr/>
-            {renderizarLista()}
+            <MostrarLista>
+                {renderizarLista()}
+            </MostrarLista>
         </>
     )
 };

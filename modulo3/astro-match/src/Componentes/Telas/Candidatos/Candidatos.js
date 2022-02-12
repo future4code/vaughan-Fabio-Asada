@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom, Loading, ContainerInfoRotacionar} from "./CandidatosEstilos";
+import {Header, ContainerInfo, Image, DivContainer, DivInfo, NomeIdade, DivButtom, ImgCoracao, ImgBotas, Buttom, Loading, H3} from "./CandidatosEstilos";
+import PopUp from "../PopUp/PopUp";
 
 import axios from "axios";
 
@@ -10,6 +11,7 @@ import Carregando from "../../../Assets/loading.gif";
 const Candidatos= props => {
     const [candidato, setCandidato] = useState([]);
     const [animacao, setAnimacao] = useState('');
+    const [deuMatch, setDeuMatch] = useState(false);
 
     useEffect(() => buscarCandidatos(), []);
    
@@ -30,7 +32,7 @@ const Candidatos= props => {
             switch(animacao){
                 case '':
                     return(
-                        <ContainerInfo className="">
+                        <ContainerInfo>
                             <Image src={candidato[0].photo}/>
             
                             <DivContainer>
@@ -115,7 +117,12 @@ const Candidatos= props => {
         axios   
             .post(url, body, header)
             .then(response => {
-                console.log(response.data);
+                console.log(response.data.isMatch);
+
+                if(response.data.isMatch){
+                    setDeuMatch(!deuMatch)
+                };
+
                 setAnimacao("gostei");
                 buscarCandidatos()
             })
@@ -131,7 +138,7 @@ const Candidatos= props => {
     return(
         <>
             <Header>
-                <h3>AstroMatch</h3>
+                <H3>AstroMatch</H3>
                 <Buttom onClick={props.trocarTela}>Adicionados</Buttom>
             </Header>
             <hr/>
@@ -143,7 +150,7 @@ const Candidatos= props => {
                 <ImgBotas src={Botas} onClick={naoGostei}/>
                 <ImgCoracao src={Heart} onClick={gostei}/>
             </DivButtom>
-            
+            {deuMatch? <PopUp/> : ""}
         </>
     )
 };

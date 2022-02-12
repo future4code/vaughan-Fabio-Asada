@@ -5,6 +5,7 @@ export const Container= styled.div`
     justify-content:space-between;
     align-items:center;
     padding:15px;
+    
 `;
 
 export const ContainerLista= styled.div`
@@ -17,6 +18,7 @@ export const ContainerLista= styled.div`
     &:hover{
         background-color:rgba(0,0,0, .4)
     }
+    
 `;
 
 export const Imagem= styled.img`
@@ -53,3 +55,11 @@ export const ButtomExcluir=styled.button`
     }
 `;
 
+export const H3=styled.h3`
+    color:#FD8F8F;
+`;
+
+export const MostrarLista=styled.div`
+    overflow:auto;
+    height:670px;
+`;
