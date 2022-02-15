@@ -1,19 +1,13 @@
 import React from "react";
-import {HomePageContainer, Header, AreaViagensOuAdmin, Main, DivTextoImagem, DivParagrafoImagem, Paragrafo, Footer, Nome, Imagem, H2} from "./HomePageEstilos";
-import Foguete from "../../assets/fogueteTratado.png";
+import {HomePageContainer, Main, DivTextoImagem, DivParagrafoImagem, Paragrafo, H3} from "./HomePageEstilos";
+import HeaderPage from "../Header/Header";
+import FooterPage from "../Footer/Footer";
 
 const HomePage= () => {
+
     return(
         <HomePageContainer>
-            <Header>
-
-                <div><Imagem src={Foguete}/></div> 
-                <AreaViagensOuAdmin>
-                    <div>Viagens</div>
-                    <div>Administração</div>
-                </AreaViagensOuAdmin> 
-
-            </Header>
+            <HeaderPage links={["Home", "Viagens", "Login"]} caminhos={["/", "/trips/list", "/login"]}/>
 
             <Main>
                 <DivTextoImagem>
@@ -22,7 +16,7 @@ const HomePage= () => {
 
                 <DivParagrafoImagem>
                     <div>
-                        <H2>Ao infinito... e além!</H2>
+                        <H3>Ao infinito... e além!</H3>
                         <Paragrafo>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Paragrafo>
                         
                         <Paragrafo>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Paragrafo>
@@ -32,9 +26,7 @@ const HomePage= () => {
                 </DivParagrafoImagem>
             </Main>
 
-            <Footer>
-                Desenvolvido por  &nbsp;<Nome> Fábio Asada</Nome> &nbsp; 2022 &nbsp;
-            </Footer>
+            <FooterPage/>
         </HomePageContainer>
     )
 };

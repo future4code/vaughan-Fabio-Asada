@@ -7,22 +7,6 @@ export const HomePageContainer= styled.div`
     color:#CA40F7; 
 `;
 
-export const Header= styled.header`
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-    background-color:#32333E;
-    position:relative;
-`;
-
-export const AreaViagensOuAdmin= styled.div`
-    width:300px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size: 1.3rem;
-`
 
 export const Main= styled.main`
     width:70vw;
@@ -31,14 +15,6 @@ export const Main= styled.main`
     margin:auto;
     margin-top:20px;
     border:1px solid white
-`;
-
-export const Imagem=styled.img`
-    width:150px;
-    height:100px;
-    position:absolute;
-    top:3px;
-    left: 0px;
 `;
 
 export const DivTextoImagem= styled.div`
@@ -66,22 +42,9 @@ export const Paragrafo=styled.p`
     border-radius:6px;
     color:#A6B8FA;
 `;
-export const Footer= styled.footer`
-    width:100vw;
-    height:95px;
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    background-color:#32333E;
-`;
 
-export const Nome=styled.span`
-    font-size:1.3rem;
-    font-weight:bolder;
-    color:white;
-`; 
 
-export const H2=styled.h2`
+export const H3=styled.h3`
     color:white;
     padding-left:10px;
 `;
