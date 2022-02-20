@@ -6,7 +6,8 @@ export const Header= styled.header`
     align-items:center;
     padding:0px 20px;
     background-color:#32333E;
-    position:relative;
+    position:fixed;
+    top:0px;
     width:97.9vw;
 `;
 
@@ -25,7 +26,7 @@ export const Nome=styled.span`
 `;
 
 export const AreaViagensOuAdmin= styled.div`
-    width:300px;
+    width:400px;
     align-items:center;
     font-size: 1.3rem;
 `;

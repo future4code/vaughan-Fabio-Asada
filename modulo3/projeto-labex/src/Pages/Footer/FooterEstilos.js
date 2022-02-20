@@ -13,9 +13,13 @@ export const Footer= styled.footer`
     bottom:0px;
 `;
 
+export const Div=styled.div`
+    margin-right:20px;
+`;
+
 export const Nome=styled.span`
     font-size:1.3rem;
     font-weight:bolder;
     color:white;
-    padding: 0px 15px;
+    padding: 0px 10px;
 `;
