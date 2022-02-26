@@ -1,0 +1,9 @@
+.header-logo, .header-login{
+    text-decoration: none;
+    color: white;
+}
+
+.header-logo:hover, .header-login:hover{
+    text-decoration: none;
+    color: rgb(51, 6, 6);
+}
