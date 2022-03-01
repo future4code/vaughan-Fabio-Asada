@@ -5,6 +5,8 @@ import axios from "axios";
 import {Layout, Container, ContainerFooter, ContainerVotos, AdicionarPost, Setas, Excluir, FooterComentarios, Form, Textarea, Button, LoadingCont} from "./styled";
 import SetaPreenchidaCima from "../../assets/setaPreenchidaCima.png"
 import SetaPreenchidaBaixo from "../../assets/setaPreenchidaBaixo.png"
+import SetaVaziaBaixo from "../../assets/setaVazadaBaixo.png"
+import SetaVaziaCima from "../../assets/setaVazadaCima.png"
 import useForms from "../hooks/useForms";
 import Loading from "../../assets/carregando.gif";
 
@@ -53,16 +55,13 @@ const DetalhesDoPost= () => {
             axios
                 .post(url, body, header)
                 .then(response => {
-                    console.log(response.data)
                     buscarPosts();
                 })
                 .catch(error => console.log(error.response.data))
 
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVoto(`posts/${id}/votes`);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVoto(`posts/${id}/votes`);
+            buscarPosts();
         }
     };
 
@@ -86,10 +85,8 @@ const DetalhesDoPost= () => {
                 .catch(error => alert(error.response.data))
 
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVoto(`posts/${id}/votes`);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVoto(`posts/${id}/votes`);
+            buscarPosts();
         }
     };
 
@@ -170,10 +167,9 @@ const DetalhesDoPost= () => {
                 })
                 .catch(error => console.log(error.response.data))
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVotoComentario(id);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVotoComentario(id);
+            buscarPosts();
+            
         }
     }
 
@@ -199,10 +195,8 @@ const DetalhesDoPost= () => {
                 })
                 .catch(error => console.log(error.response.data))
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVotoComentario(id);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVotoComentario(id);
+            buscarPosts();
         }
     }
     
@@ -220,11 +214,11 @@ const DetalhesDoPost= () => {
 
                     <FooterComentarios>
                     
-                    <Setas src={SetaPreenchidaCima} onClick={() => votosNoComentarioCima(obj.userVote,obj.id)}/>
+                    <Setas src={obj.userVote === 1 ? SetaPreenchidaCima: SetaVaziaCima} onClick={() => votosNoComentarioCima(obj.userVote,obj.id)}/>
 
                     {obj.voteSum? obj.voteSum :0 }
 
-                    <Setas src={SetaPreenchidaBaixo} onClick={() => votosNoComentarioBaixo(obj.userVote, obj.id)}/>
+                    <Setas src={obj.userVote === -1 ? SetaPreenchidaBaixo :SetaVaziaBaixo} onClick={() => votosNoComentarioBaixo(obj.userVote, obj.id)}/>
                     
                     </FooterComentarios>
                 </Container>
@@ -268,13 +262,13 @@ const DetalhesDoPost= () => {
                 <ContainerFooter>
                     <ContainerVotos>
                         <p> 
-                            <Setas src={SetaPreenchidaCima} onClick={() => votosCima(`posts/${detalhes[0].id}/votes`, detalhes[0].userVote, detalhes[0].id)}/> 
+                            <Setas src={detalhes[0].userVote === 1 ? SetaPreenchidaCima: SetaVaziaCima} onClick={() => votosCima(`posts/${detalhes[0].id}/votes`, detalhes[0].userVote, detalhes[0].id)}/> 
                             
                         </p>
                         
                         <p>{detalhes[0].voteSum? detalhes[0].voteSum: 0}</p> 
                         
-                        <p> <Setas src={SetaPreenchidaBaixo} onClick={() => votosBaixo(`posts/${detalhes[0].id}/votes`, detalhes[0].userVote, detalhes[0].id)}/></p>
+                        <p> <Setas src={detalhes[0].userVote === -1 ? SetaPreenchidaBaixo :SetaVaziaBaixo} onClick={() => votosBaixo(`posts/${detalhes[0].id}/votes`, detalhes[0].userVote, detalhes[0].id)}/></p>
 
                     </ContainerVotos>
                     <div>

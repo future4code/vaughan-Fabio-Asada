@@ -6,6 +6,8 @@ import {Layout, Container,ContainerFooter, ContainerVotos, AdicionarPost, Setas,
 import "./style.css";
 import SetaPreenchidaCima from "../../assets/setaPreenchidaCima.png"
 import SetaPreenchidaBaixo from "../../assets/setaPreenchidaBaixo.png"
+import SetaVaziaBaixo from "../../assets/setaVazadaBaixo.png"
+import SetaVaziaCima from "../../assets/setaVazadaCima.png"
 import Busca from "../../assets/search.png"
 import Loading from "../../assets/carregando.gif";
 import useForms from "../hooks/useForms";
@@ -60,10 +62,8 @@ const ListaDePosts= () => {
                 .catch(error => alert(error))
 
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVoto(`posts/${id}/votes`);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVoto(`posts/${id}/votes`);
+            buscarPosts();
         }
     };
 
@@ -87,10 +87,8 @@ const ListaDePosts= () => {
                 .catch(error => alert(error.response.data))
 
         }else{
-            if(window.confirm("Deseja mudar o seu voto?")){
-                excluirVoto(`posts/${id}/votes`);
-                alert("Voto retirado. Pode votar novamente.");
-            }
+            excluirVoto(`posts/${id}/votes`);
+            buscarPosts();
         }
     };
 
@@ -140,13 +138,13 @@ const ListaDePosts= () => {
                 <ContainerFooter>
                     <ContainerVotos>
                         <p> 
-                            <Setas src={SetaPreenchidaCima} onClick={() => votosCima(`posts/${id}/votes`, userVote, id)}/> 
+                            <Setas src={userVote === 1 ? SetaPreenchidaCima: SetaVaziaCima} onClick={() => votosCima(`posts/${id}/votes`, userVote, id)}/> 
                             
                         </p>
                         
                         <p>{voteSum?voteSum: 0}</p> 
                         
-                        <p> <Setas src={SetaPreenchidaBaixo} onClick={() => votosBaixo(`posts/${id}/votes`, userVote, id)}/></p>
+                        <p> <Setas src={userVote === -1 ? SetaPreenchidaBaixo :SetaVaziaBaixo} onClick={() => votosBaixo(`posts/${id}/votes`, userVote, id)}/></p>
 
                     </ContainerVotos>
                     <div>
