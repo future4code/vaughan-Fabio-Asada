@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-01",
+  "version": "1.0.0",
+  "description": "\"Conhecendo o Node.js\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "\"Fábio Asada\"",
+  "license": "ISC"
+}

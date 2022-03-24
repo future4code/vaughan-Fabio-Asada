@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-02",
+  "version": "1.0.0",
+  "description": "\"pacotes node\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "Fábio Asada",
+  "license": "ISC"
+}
