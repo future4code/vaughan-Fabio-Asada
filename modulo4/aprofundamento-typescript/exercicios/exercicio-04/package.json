@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js && node ./build/teste.js && node ./build/teste1.js && node ./build/teste2.js && node ./build/teste3.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
