@@ -1,0 +1,24 @@
+Escreva uma função que receba um texto e devolva uma cópia dele, sem as vogais.
+
+Exemplos:
+“Água” → “g”
+“Pão de queijo” → “P d qj”
+
+const copiaDoTexto= (frase: string): string => {
+    const consoantes : string[]= [" ", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "z", "w", "y"];
+    const minusculas:string= frase.toLowerCase();
+    let novaFrase:string=""
+
+    for(let i=0; i < frase.length; i++){
+
+        for(let indice=0; indice < consoantes.length; indice++){
+            if(minusculas[i] === consoantes[indice]){
+                novaFrase += frase[i];
+            }
+        }
+    }
+    
+    return novaFrase;
+};
+
+console.log(copiaDoTexto("Pão de queijo"));
