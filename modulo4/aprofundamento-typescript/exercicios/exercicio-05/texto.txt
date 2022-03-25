@@ -1,0 +1,3 @@
+Primerio que ficou muito mais fácil de ser visualizado.
+E vc consegue entender, todos os comandos necessários, para se fazer a conversão de typescript para javascript.
+Onde se encontra o arquivo typescript, na pasta src. E onde será colocado o arquivo javascript, na pasta build.

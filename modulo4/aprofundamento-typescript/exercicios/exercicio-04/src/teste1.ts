@@ -1,0 +1,1 @@
+console.log("Teste1.ts")
