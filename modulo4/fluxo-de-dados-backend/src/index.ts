@@ -12,7 +12,7 @@ app.get("/test", (req:Request, res: Response) => {
     res.status(200).send("API está funcionando corretamente.");
 });
 
-// Exercício 03
+// Exercício 03 e 07
 app.post("/produtos/adicionar", (req:Request, res:Response) => {
     
     try{
@@ -67,29 +67,75 @@ app.get("/produtos", (req:Request, res:Response) => {
     res.status(200).send(produtos);
 });
 
-// Exercício 05
+// Exercício 05 e 08
 app.put("/produto/:id/price", (req: Request, res: Response) => {
-    const authorization= req.headers.authorization;
-    const id: string= req.params.id;
-    const price= req.body.price;
-  
-    const atualizacaoDeproduto: Produtos[]= produtos.map((obj:Produtos): Produtos => {
-        if(obj.id === id) return {...obj, price:price};
+    let codeError: number= 400;
 
-        return obj;
-    });
+    try{
+        const authorization= req.headers.authorization;
+        const id: string= req.params.id;
+        const price= req.body.price;
+        let atualizacaoDeproduto: Produtos[]= produtos.filter(obj => obj.id === id);
 
-    res.status(201).send(atualizacaoDeproduto);
+        if(!price){
+            codeError= 422;
+            throw new Error("Preencha corretamente o campo do Preço.");
+        }else if(typeof price !== "number"){
+            codeError= 422;
+            throw new Error("Preço é diferente de number.");
+        }else if(price <= 0){
+            codeError= 422;
+            throw new Error("Preço não pode ser menor ou igual a zero.");
+        }else if(!atualizacaoDeproduto.length){
+            codeError= 422;
+            throw new Error("Produto não encontrado.");
+
+        }else if(authorization === "fabio-asada-vaughan"){
+
+            atualizacaoDeproduto= produtos.map((obj:Produtos): Produtos => {
+                if(obj.id === id) return {...obj, price:price};
+        
+                return obj;
+            })
+
+            res.status(201).send(atualizacaoDeproduto);
+        }else{
+            codeError= 500;
+            throw new Error("Ocorreu um erro. Tente novamente.");
+        }
+
+    }catch(error: any){
+        res.status(codeError).send(error.message);
+    }
+    
 });
 
-// Exercício 06
+// Exercício 06 e 09
 app.delete("/produto/:id", (req:Request, res:Response) => {
-    const authorization= req.headers.authorization;
-    const id: string= req.params.id;
+    let codeError: number= 400;
 
-    const produtoDeletado: Produtos[]= produtos.filter((obj:Produtos): boolean => obj.id !== id);
+    try{
+        const authorization= req.headers.authorization;
+        const id: string= req.params.id;
+        const produtoDeletado: Produtos[]= produtos.filter((obj:Produtos): boolean => obj.id !== id);
+        const produtoNaoEncontrado: Produtos[]= produtos.filter((obj:Produtos): boolean => obj.id === id);
 
-    res.status(201).send(produtoDeletado);
+        if(!produtoNaoEncontrado.length){
+            codeError= 422;
+            throw new Error("Produto não encontrado.");
+
+        }else if(authorization === "fabio-asada-vaughan"){
+
+            res.status(201).send(produtoDeletado);
+        }else{
+            codeError= 500;
+            throw new Error("Ocorreu um erro. Tente novamente mais tarde.");
+        }
+
+    }catch(error: any){
+        res.status(codeError).send(error.message);
+    }
+    
 });
 
 app.listen(3003, () => console.log("Servidor criado na porta 3003"));
