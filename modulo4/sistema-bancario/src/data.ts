@@ -1,4 +1,12 @@
-export type Extrato= {valor:number, data:string, descricao:string};
+export type Transacoes={
+    remetente:string,
+    cpfRemetente:string,
+    destinatario:string,
+    cpfDestinatario:string,
+    valorTransacao:number,
+}
+
+export type Extrato= {valor:number, data:string, descricao:string, transacoes?:Transacoes[]};
 
 export type Usuario= {
     nome:string,
@@ -15,7 +23,7 @@ export const usuario: Usuario[]= [
         nascimento:"23/05/1984",
         saldo:1000,
         extrato:[
-            {valor:120, data:"15/02/2022", descricao:"Churrascaria Boi Chifrudo"}
+            {valor:120, data:"01/03/2022", descricao:"Churrascaria Boi Chifrudo"}
         ],
     },
     {
@@ -24,7 +32,7 @@ export const usuario: Usuario[]= [
         nascimento:"03/10/2002",
         saldo:5000,
         extrato:[
-            {valor:500, data:"18/09/2021", descricao:"Presente de aniversário do marido"}
+            {valor:500, data:"01/04/2022", descricao:"Presente de aniversário do marido"}
         ],
     },
     {
@@ -33,7 +41,7 @@ export const usuario: Usuario[]= [
         nascimento:"23/12/1998",
         saldo:2500,
         extrato:[
-            {valor:6000, data:"01/01/2022", descricao:"Viagem para Fernando de Noronha"}
+            {valor:6000, data:"04/04/2022", descricao:"Viagem para Fernando de Noronha"}
         ],
     },
     {
@@ -42,16 +50,16 @@ export const usuario: Usuario[]= [
         nascimento:"17/06/1994",
         saldo:30000,
         extrato:[
-            {valor:6000, data:"24/12/2021", descricao:"Celular Samsung S22"}
+            {valor:6000, data:"03/04/2022", descricao:"Celular Samsung S22"}
         ],
     },
     {
         nome:"Juliana Costa Duarte",
         cpf:"360.127.080-44",
         nascimento:"28/02/1990",
-        saldo:500000,
+        saldo:10000,
         extrato:[
-            {valor:40000, data:"05/01/2022", descricao:"Viagem a Disney"}
+            {valor:40000, data:"05/03/2022", descricao:"Viagem a Disney"}
         ],
     },
 ];
